@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>針頭</title>
+    <style>
+        section {
+            width: 1100px;
+            height: 300px;
+            margin: auto;
+        }
+
+        /* 壓頭 */
+        .boxA {
+            width: 45px;
+            height: 110px;
+            border: 1px solid #aaa;
+            /* background: #fff; */
+            background: linear-gradient(to top, #fff 0.5rem, #d0d0d0 40%, #fff 5rem);
+            border-radius: 15%;
+            position: relative;
+            top: 5rem;
+        }
+
+        /* 壓管 */
+        .boxA::before {
+            content: "";
+            width: 50px;
+            height: 70px;
+            border: 1px solid #aaa;
+            /* background: #fff; */
+            background: linear-gradient(to top, #fff, #d0d0d0 30%, #fff 4rem);
+            position: absolute;
+            left: 2.8rem;
+            top: 1.2rem;
+        }
+
+        /* 管身漸層圖層 */
+        .boxA::after {
+            content: "";
+            width: 480px;
+            height: 110px;
+            border: 1px solid #aaa;
+            background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(145, 145, 145, 0.4) 37%, rgba(209, 209, 209, 0));
+            position: absolute;
+            left: 5.5rem;
+            top: 0rem;
+            z-index: 1;
+        }
+
+
+        /* 針頭前端 */
+        .boxB {
+            width: 55px;
+            height: 70px;
+            border: 1px solid #aaa;
+            background: linear-gradient(to top, #fff, #d0d0d0 30%, #fff 4rem);
+            border-radius: 0 15% 15% 0;
+            position: relative;
+            top: -0.7rem;
+            left: 35rem;
+        }
+
+        /* 針頭管身&文字 */
+        .boxB::before {
+            content: "";
+            /* font-family: "微軟正黑體";
+            font-size: 14px; */
+            /* transform: translate(-50%); */
+            color: #aaa;
+            width: 480px;
+            height: 110px;
+            /* border: 1px solid #aaa; */
+            /* border-top-style: dotted; */
+            background: linear-gradient(90deg, #ffffff 50%, #feffa8 50%);
+            position: absolute;
+            top: -1.3rem;
+            left: -29.5rem;
+
+        }
+
+        /* 管身黑段處 */
+        .boxB::after {
+            content: "";
+            width: 45px;
+            height: 111px;
+            background: #000;
+            position: absolute;
+            top: -1.25rem;
+            left: -16rem;
+            z-index: 1;
+        }
+
+        .line {
+            width: 100px;
+            height: 1px;
+            background: #7a7a7a;
+            position: relative;
+            left: 38.5rem;
+            bottom: 3rem;
+        }
+
+        /* 管身虛線 */
+        .line::before {
+            content: '';
+            width: 450px;
+            height: 100px;
+            height: 15px;
+            background: linear-gradient(to right, #b4b4b4, #b4b4b4, transparent 1px, transparent 1px);
+            background-size: 15px 100%;
+
+            position: absolute;
+            bottom: 2.5rem;
+            right: 9.5rem;
+        }
+
+        .line::after {
+            content: "Made in Taiwan";
+            font-family: "微軟正黑體";
+            color: #7c7c7c;
+            font-size: 14px;
+            position: absolute;
+            left: -524px;
+            top: 38px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="boxA"></div>
+        <div class="boxB"></div>
+        <div class="line"></div>
+    </section>
+
+</body>
+
+</html>
